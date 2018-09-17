@@ -1,11 +1,9 @@
 version: 2
+
 jobs:
   build:
-    docker:
-      - image: docker:dind
+    machine: true
     steps:
       - checkout
-      - run:
-          name: Build image
-          command: docker build .
+      - run: docker build .
 
